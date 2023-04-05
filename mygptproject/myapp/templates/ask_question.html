@@ -1,0 +1,11 @@
+<form method="post">
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit">Submit</button>
+</form>
+{% if question %}
+        <p>You asked: {{ question }}</p>
+        <p>Here is what GPT has to say: {{ answer}}</p>
+{% else %}
+    <p>Hello World!</p>
+{% endif %}

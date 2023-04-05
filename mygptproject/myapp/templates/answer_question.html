@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Ask a Question to the GPT Engine</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for="question">What's your question?</label>
+        <input type="text" id="question" name="question" maxlength="1000" required>
+        <input type="submit" value="Ask">
+    </form>
+    {% if question %}
+        <p>You asked: {{ question }}</p>
+        <p>Here is what GPT has to say: {{ answer}}</p>
+    {% else %}
+        <p>Hello World!</p>
+    {% endif %}
+</body>
+</html>
